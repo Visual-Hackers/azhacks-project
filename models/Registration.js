@@ -3,7 +3,7 @@ const {
     Schema
 } = mongoose;
 
-const registrationScehma = new Schema({
+const registrationSchema = new Schema({
     name: String,
     address: String,
     phone: String,
@@ -11,4 +11,4 @@ const registrationScehma = new Schema({
     registerDate: Date
 });
 
-mongoose.model('registration', registrationScehma);
+mongoose.model('registration', registrationSchema);
