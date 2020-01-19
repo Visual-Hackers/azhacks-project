@@ -11,9 +11,6 @@ mongoose.connect(config.mongoURI, {
 app.use(bodyParser.json());
 require('./models/Registration');
 require('./routes/dialogFlowRoutes')(app);
-require('./routes/fulfillmentRoutes')(app);
-require('./models/Demand');
-require('./models/Registration');
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
