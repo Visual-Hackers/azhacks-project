@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios/index';
-
 import Cookies from 'universal-cookie';
 import { v4 as uuid } from 'uuid';
-
 import Message from './Message';
 import Card from './Card';
 
 const cookies = new Cookies();
 
-class Chatbot extends Component {
-
+class Chatbot extends Component 
+{
     messagesEnd;
     talkInput;
 
     constructor(props) {
         super(props);
-
-        // This binding is necessary to make `this` work in the callback
         this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
         this.state = {
             messages: []
@@ -39,7 +35,6 @@ class Chatbot extends Component {
 
         this.setState({messages: [...this.state.messages, says]});
         const res = await axios.post('/api/df_text_query',  {text: queryText, userID: cookies.get('userID')});
-
         for (let msg of res.data.fulfillmentMessages) {
             console.log(JSON.stringify(msg));
             says = {
@@ -52,7 +47,6 @@ class Chatbot extends Component {
 
     async df_event_query(eventName) {
         const res = await axios.post('/api/df_event_query',  {event: eventName, userID: cookies.get('userID')});
-
         for (let msg of res.data.fulfillmentMessages) {
             let says = {
                 speaks: 'bot',
@@ -80,12 +74,11 @@ class Chatbot extends Component {
         if (message.msg && message.msg.text && message.msg.text.text) {
             return <Message key={i} speaks={message.speaks} text={message.msg.text.text}/>;
         } else if (message.msg && message.msg.payload.fields.cards) { //message.msg.payload.fields.cards.listValue.values
-
             return <div key={i}>
                 <div className="card-panel grey lighten-5 z-depth-1">
                     <div style={{overflow: 'hidden'}}>
                         <div className="col s2">
-                            <a href="/" className="btn-floating btn-large waves-effect waves-light red">{message.speaks}</a>
+                            <a href="/" className="btn-floating btn-large waves-effect waves-light blue">{message.speaks}</a>
                         </div>
                         <div style={{ overflow: 'auto', overflowY: 'scroll'}}>
                             <div style={{ height: 300, width:message.msg.payload.fields.cards.listValue.values.length * 270}}>
@@ -118,9 +111,8 @@ class Chatbot extends Component {
     
     render() {
         return (
-            <div style={{ height: 400, width: 400, float: 'right' }}>
+            <div style={{ height: 400, width: '100%' }}>
                 <div id="chatbot" style={{ height: '100%', width: '100%', overflow: 'auto'}}>
-                    <h2>Chatbot</h2>
                     {this.renderMessages(this.state.messages)}
                     <div ref={(el) => { this.messagesEnd = el; }}
                          style={{ float:"left", clear: "both" }}>

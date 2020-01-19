@@ -1,5 +1,4 @@
 import React from 'react';
-
 const ItemList = () => {
     return (
         <div>
@@ -7,5 +6,4 @@ const ItemList = () => {
         </div>
     )
 };
-
 export default ItemList;
