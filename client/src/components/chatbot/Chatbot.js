@@ -36,8 +36,6 @@ class Chatbot extends Component
                 }
             }
         };
-
-<<<<<<< HEAD
         this.setState({
             messages: [...this.state.messages, says]
         });
@@ -45,11 +43,6 @@ class Chatbot extends Component
             text: queryText,
             userID: cookies.get('userID')
         });
-
-=======
-        this.setState({messages: [...this.state.messages, says]});
-        const res = await axios.post('/api/df_text_query',  {text: queryText, userID: cookies.get('userID')});
->>>>>>> 4cf7fb557e2e2e9c257302905ffc031defa75316
         for (let msg of res.data.fulfillmentMessages) {
             console.log(JSON.stringify(msg));
             says = {
@@ -63,15 +56,10 @@ class Chatbot extends Component
     };
 
     async df_event_query(eventName) {
-<<<<<<< HEAD
         const res = await axios.post('/api/df_event_query', {
             event: eventName,
             userID: cookies.get('userID')
         });
-
-=======
-        const res = await axios.post('/api/df_event_query',  {event: eventName, userID: cookies.get('userID')});
->>>>>>> 4cf7fb557e2e2e9c257302905ffc031defa75316
         for (let msg of res.data.fulfillmentMessages) {
             let says = {
                 speaks: 'bot',
@@ -95,15 +83,6 @@ class Chatbot extends Component
     }
 
     renderCards(cards) {
-<<<<<<< HEAD
-        return cards.map((card, i) => < Card key = {
-                i
-            }
-            payload = {
-                card.structValue
-            }
-            />);
-=======
         return cards.map((card, i) => <Card key={i} payload={card.structValue}/>);
     }
 
@@ -126,7 +105,6 @@ class Chatbot extends Component
                     </div>
                 </div>
             </div>
->>>>>>> 4cf7fb557e2e2e9c257302905ffc031defa75316
         }
 
         renderOneMessage(message, i) {
@@ -144,21 +122,15 @@ class Chatbot extends Component
                 />;
             } else if (message.msg && message.msg.payload.fields.cards) { //message.msg.payload.fields.cards.listValue.values
 
-                return <div key = {
-                        i
-                    } >
-                    <
-                    div className = "card-panel grey lighten-5 z-depth-1" >
-                    <
-                    div style = {
+                return <div key = {i}>
+                    <div className = "card-panel grey lighten-5 z-depth-1" >
+                    <div style = {
                         {
                             overflow: 'hidden'
                         }
                     } >
-                    <
-                    div className = "col s2" >
-                    <
-                    a href = "/"
+                    <div className = "col s2" >
+                    <a href = "/"
                 className = "btn-floating btn-large waves-effect waves-light red" > {
                         message.speaks
                     } < /a> <
@@ -169,20 +141,19 @@ class Chatbot extends Component
                             overflowY: 'scroll'
                         }
                     } >
-                    <
-                    div style = {
+                    <div style = 
+                    {
                         {
                             height: 300,
                             width: message.msg.payload.fields.cards.listValue.values.length * 270
                         }
-                    } > {
+                    }>{
                         this.renderCards(message.msg.payload.fields.cards.listValue.values)
-                    } <
-                    /div> <
-                    /div> <
-                    /div> <
-                    /div> <
-                    /div>
+                    }</div> 
+                </div> 
+                </div> 
+                </div> 
+                </div>
             }
         }
 
@@ -253,11 +224,6 @@ class Chatbot extends Component
             );
         }
     }
-<<<<<<< HEAD
-
-    export default Chatbot;
-=======
-    
     render() {
         return (
             <div style={{ height: 400, width: '100%' }}>
@@ -272,6 +238,4 @@ class Chatbot extends Component
         );
     }
 }
-
 export default Chatbot;
->>>>>>> 4cf7fb557e2e2e9c257302905ffc031defa75316
