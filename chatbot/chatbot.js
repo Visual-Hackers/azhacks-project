@@ -1,5 +1,5 @@
 const dialogflow = require("dialogflow");
-const structjson = require('./structjson');
+const structjson = require("./structjson");
 const config = require("../config/keys");
 const projectID = config.googleProjectID;
 const credentials = {
@@ -11,7 +11,7 @@ const sessionClient = new dialogflow.SessionsClient({
     credentials
 });
 
-const sessionClient = new dialogflow.SessionsClient();
+
 const sessionPath = sessionClient.sessionPath(config.googleProjectID, config.dialogFlowSessionID);
 
 module.exports = {
@@ -25,8 +25,8 @@ module.exports = {
                     // The query to send to the dialogflow agent
                     text: text,
                     // The language used by the client (en-US)
-                    languageCode: config.dialogFlowSessionLanguageCode,
-                },
+                    languageCode: config.dialogFlowSessionLanguageCode
+                }
             },
             queryParams: {
                 payload: {
@@ -47,8 +47,8 @@ module.exports = {
                 event: {
                     name: event,
                     parameters: structjson.jsonToStructProto(parameters),
-                    languageCode: config.dialogFlowSessionLanguageCode,
-                },
+                    languageCode: config.dialogFlowSessionLanguageCode
+                }
             }
         };
         let responses = await sessionClient.detectIntent(request);
@@ -58,5 +58,5 @@ module.exports = {
 
     handleAction: function (responses) {
         return responses;
-    },
-}
+    }
+};
