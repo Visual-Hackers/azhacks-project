@@ -128,7 +128,7 @@ class Chatbot extends Component {
                     speaks: 'bot',
                     msg: {
                         text: {
-                            text: "I'm having troubles. I need to terminate. will be back later"
+                          text: "Here are some popular links that may be helpful: https://www.linkedin.com/, www.indeed.com/hire, www.glassdoor.com .....""
                         }
                     }
                 }
