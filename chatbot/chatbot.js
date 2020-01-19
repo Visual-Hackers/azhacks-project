@@ -11,8 +11,8 @@ const sessionClient = new dialogflow.SessionsClient({
     credentials
 });
 
-
 const sessionPath = sessionClient.sessionPath(config.googleProjectID, config.dialogFlowSessionID);
+const Registration = mongoose.model('registration');
 
 module.exports = {
     textQuery: async function (text, parameters = {}) {
@@ -57,6 +57,30 @@ module.exports = {
     },
 
     handleAction: function (responses) {
+        let self = module.exports;
+        let queryResult = responses[0].queryResult;
+        switch (queryResult.action) {
+            case 'differentWebsites-yes':
+                if (queryResult.allRequiredParamsPresent) {
+                    self.saveRegistration(queryResult.parameters.fields);
+                }
+                break;
+        }
         return responses;
+    },
+    saveRegistration: async function (fields) {
+        const registration = new Registration({
+            name: fields.name.stringValue,
+            address: fields.address.stringValue,
+            phone: fields.phone.stringValue,
+            email: fields.email.stringValue,
+            dataSent: Data.now()
+        });
+        try {
+            let reg = await registration.save();
+            console.log(reg);
+        } catch (err) {
+            console.log(err);
+        }
     }
 };
