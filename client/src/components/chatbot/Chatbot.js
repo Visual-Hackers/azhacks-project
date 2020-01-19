@@ -2,26 +2,20 @@ import React, {
     Component
 } from 'react';
 import axios from 'axios/index';
-
 import Cookies from 'universal-cookie';
-import {
-    v4 as uuid
-} from 'uuid';
-
+import { v4 as uuid } from 'uuid';
 import Message from './Message';
 import Card from './Card';
 
 const cookies = new Cookies();
 
-class Chatbot extends Component {
-
+class Chatbot extends Component 
+{
     messagesEnd;
     talkInput;
 
     constructor(props) {
         super(props);
-
-        // This binding is necessary to make `this` work in the callback
         this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
         this.state = {
             messages: []
@@ -43,6 +37,7 @@ class Chatbot extends Component {
             }
         };
 
+<<<<<<< HEAD
         this.setState({
             messages: [...this.state.messages, says]
         });
@@ -51,6 +46,10 @@ class Chatbot extends Component {
             userID: cookies.get('userID')
         });
 
+=======
+        this.setState({messages: [...this.state.messages, says]});
+        const res = await axios.post('/api/df_text_query',  {text: queryText, userID: cookies.get('userID')});
+>>>>>>> 4cf7fb557e2e2e9c257302905ffc031defa75316
         for (let msg of res.data.fulfillmentMessages) {
             console.log(JSON.stringify(msg));
             says = {
@@ -64,11 +63,15 @@ class Chatbot extends Component {
     };
 
     async df_event_query(eventName) {
+<<<<<<< HEAD
         const res = await axios.post('/api/df_event_query', {
             event: eventName,
             userID: cookies.get('userID')
         });
 
+=======
+        const res = await axios.post('/api/df_event_query',  {event: eventName, userID: cookies.get('userID')});
+>>>>>>> 4cf7fb557e2e2e9c257302905ffc031defa75316
         for (let msg of res.data.fulfillmentMessages) {
             let says = {
                 speaks: 'bot',
@@ -92,6 +95,7 @@ class Chatbot extends Component {
     }
 
     renderCards(cards) {
+<<<<<<< HEAD
         return cards.map((card, i) => < Card key = {
                 i
             }
@@ -99,6 +103,30 @@ class Chatbot extends Component {
                 card.structValue
             }
             />);
+=======
+        return cards.map((card, i) => <Card key={i} payload={card.structValue}/>);
+    }
+
+    renderOneMessage(message, i) {
+
+        if (message.msg && message.msg.text && message.msg.text.text) {
+            return <Message key={i} speaks={message.speaks} text={message.msg.text.text}/>;
+        } else if (message.msg && message.msg.payload.fields.cards) { //message.msg.payload.fields.cards.listValue.values
+            return <div key={i}>
+                <div className="card-panel grey lighten-5 z-depth-1">
+                    <div style={{overflow: 'hidden'}}>
+                        <div className="col s2">
+                            <a href="/" className="btn-floating btn-large waves-effect waves-light blue">{message.speaks}</a>
+                        </div>
+                        <div style={{ overflow: 'auto', overflowY: 'scroll'}}>
+                            <div style={{ height: 300, width:message.msg.payload.fields.cards.listValue.values.length * 270}}>
+                                {this.renderCards(message.msg.payload.fields.cards.listValue.values)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+>>>>>>> 4cf7fb557e2e2e9c257302905ffc031defa75316
         }
 
         renderOneMessage(message, i) {
@@ -225,5 +253,25 @@ class Chatbot extends Component {
             );
         }
     }
+<<<<<<< HEAD
 
     export default Chatbot;
+=======
+    
+    render() {
+        return (
+            <div style={{ height: 400, width: '100%' }}>
+                <div id="chatbot" style={{ height: '100%', width: '100%', overflow: 'auto'}}>
+                    {this.renderMessages(this.state.messages)}
+                    <div ref={(el) => { this.messagesEnd = el; }}
+                         style={{ float:"left", clear: "both" }}>
+                    </div>
+                    <input type="text" ref={(input) => { this.talkInput = input; }}  onKeyPress={this._handleInputKeyPress}  />
+                </div>
+            </div>
+        );
+    }
+}
+
+export default Chatbot;
+>>>>>>> 4cf7fb557e2e2e9c257302905ffc031defa75316
