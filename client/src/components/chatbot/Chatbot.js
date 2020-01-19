@@ -105,10 +105,9 @@ class Chatbot extends Component
                     </div>
                 </div>
             </div>
-        }
+        };
 
         renderOneMessage(message, i) {
-
             if (message.msg && message.msg.text && message.msg.text.text) {
                 return <Message key = {
                     i
@@ -155,7 +154,7 @@ class Chatbot extends Component
                 </div> 
                 </div>
             }
-        }
+        };
 
         renderMessages(returnedMessages) {
             if (returnedMessages) {
