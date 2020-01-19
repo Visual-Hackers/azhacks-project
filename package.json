@@ -19,7 +19,9 @@
     "body-parser": "^1.19.0",
     "dialogflow": "^1.1.1",
     "express": "^4.17.1",
-    "structjson": "^1.0.1"
+    "structjson": "^1.0.1",
+    "universal-cookie": "^4.0.3",
+    "uuid": "^3.4.0"
   },
   "devDependencies": {
     "concurrently": "^5.0.2",
