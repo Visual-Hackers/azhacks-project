@@ -21,7 +21,10 @@
     "dialogflow": "^1.1.1",
     "dialogflow-fulfillment": "^0.6.1",
     "express": "^4.17.1",
-    "structjson": "^1.0.1"
+    "structjson": "^1.0.1",
+    "universal-cookie": "^4.0.3",
+    "uuid": "^3.4.0",
+    "mongoose": "^5.8.9"
   },
   "devDependencies": {
     "concurrently": "^5.0.2",
