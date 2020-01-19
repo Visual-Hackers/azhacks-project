@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hackarizona2020-265520",
+  "private_key_id": "2c04bd93ff301dcc16450fe1d4f8431e18515774",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDQfe5S0UsyXrRv\n+bdJgP6AJ71EI/i8LA2+DTPG1KwROprkZ9lXP8Muqiy4WVhmyy4dDv/nz/JriL0e\nhdH6GKZcvY/+EyxXX1wH+J/TeTokTMFwQ7jski/H5Ano2eR512yKCrwTL/6KHlTE\njVlyX8cY/JBYEL0KRHK64Jwn7AYlxHVlNDao2/iZzR9sGkNkJgEtQys8Ek6KyASU\n18X5CuHslaIIY+5eDvqC3QC97FYN2RpaHX0tU4ggaWmdK2M436hGJ6fzqAESE54C\nMavqcZ+qeO+RbE+8MpSE4gQ9qLLQlqflYu/f7U2UYdibNNEwQW7pBwB8Bopp94K+\nI+XRPI0tAgMBAAECggEACUBC0j+eQbSN9sQvc8GKqWBgbftXOe90Rz+AazBisShq\nGO8agVwfYQm+gb1Yv/jm4yjk+UhGExG5nuoK36xdbcYggA87brLY9QAwaudl/Jg/\n4tp/N4oJOJ1skVcuI6tHuHyFwCeaeJtXbg0Kj/NiTkBfEQ7iRttNW7yD8uNVAExs\n2aXDRLGeSx750JnSZC9mnUgDdCV8FKVqcrxSMwPsDZUgW6tr8UPj35K6IxPEt+NS\nJtJEHJYRbfebIOpjf49HZswvFhcETfpOIS8CHjGNL2+HrK8jMdWYnYxvAXdrjn6S\ntFK6cqzFHkPyHyIwrQD9sToQFixSiVrAbcPHkt694QKBgQD/5wikCTkgpnkbJ05g\nSirdpiTmtAqu3uHiilS5V42bsfwqAibRFgDWFCmyhyAHeAvV/nMZx06Z7ChnWTq6\nA9+0JLlbr7nVv5V05BOYzCDpFsV7dPk9FOznSMvQWDnP/SSwuiWz0+cJYye7+ktc\nk0nXjy948cswZrHvUPdtjias4QKBgQDQkkWRZRlF63XqZb6ZV1U83Z92zphJ2Sqn\nt4rFc6J7AnUQIFn/WLMf2nxGNPmr6zbAO2z/t4F8GFXGzPJaupJ8cgBW/YHBVELu\nKpNPZB7ccRWf1i3lrvZ5+QEnPcKj2oQhrBws/Qa2KJ7R7/8o3CcHabWt0rE4XjZl\nU2M90OK9zQKBgGhNaqAxgi9kqwf+RVvJ3x7okTHXQGN2ROtpJo9EuFs1eGpG5jti\nlIStQzGZEdz5eRmH1LI1IjxqnS1CmUUoPw3Vyhcs0LnmlKxIKhSlXuSie2uOiefz\nl3vNmAUbcLTtoP7HYIajYA/bcl6T7hOVlQtfOSI6q27W7L92aOMmhW0BAoGAZiYN\nPk02WIEeSgM0muMj0uBz9fruqNRcSLHinBurCvXEIXbGvQFTERmvXa8aTHGxaepw\n0risCPveHrRHSdowXhRzSCd2QhojgYOGjA5r8ujLf3GlHuVWv5wNTYu45QjjR56E\nWiA+Bj7UsdsJq5hO4RmLqisTMpkpqOxzIVZJhk0CgYBwP7oH+WU5zktnu0JSwFhl\nHSCpMO9lKOeGEIQlHWnhW8sxQSKbySPpF3BhMEsGleldnZGxK1ClLAZUod9Z9E/V\nM6OoSaPIVTzQ3LHFQRxqpUUzU5Usx2YSYfxBOAJ1Pkx4SW39dQaG1yAvBhwVbXlM\nposy/4NHtdA/RmU4LsJK3A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-ykwpjv@hackarizona2020-265520.iam.gserviceaccount.com",
+  "client_id": "114535221159731648928",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-ykwpjv%40hackarizona2020-265520.iam.gserviceaccount.com"
+}
