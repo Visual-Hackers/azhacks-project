@@ -8,7 +8,10 @@
     "npm": "6.13.4"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "backend": "nodemon index.js",
+    "frontend": "npm run start --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "author": "Deaf Hackers",
   "license": "ISC",
